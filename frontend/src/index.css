@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-surface text-slate-800 antialiased font-sans transition-colors duration-300;
+  }
+
+  html.dark body {
+    @apply bg-surface-dark text-slate-100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-card dark:bg-surface-dark-card border border-slate-200/80 dark:border-slate-700/60 rounded-2xl shadow-soft;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 px-5 py-3 text-sm font-semibold text-white shadow-card transition-all duration-200 hover:from-brand-700 hover:to-brand-600 hover:shadow-lg active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface-dark-card px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-[0.98];
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-surface-dark-card px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-slate-200/70 dark:bg-slate-700/50 rounded-md;
+  }
+
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 animate-shimmer;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.45),
+      transparent
+    );
+  }
+
+  .tab-button {
+    @apply relative px-4 py-2.5 text-sm font-medium text-slate-500 dark:text-slate-400 transition-colors duration-200 hover:text-slate-800 dark:hover:text-slate-100 whitespace-nowrap;
+  }
+
+  .tab-button.active {
+    @apply text-brand-600 dark:text-brand-400;
+  }
+
+  .tab-indicator {
+    @apply absolute -bottom-px left-0 right-0 h-0.5 rounded-full bg-brand-600 dark:bg-brand-400;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 116, 139, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 116, 139, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
