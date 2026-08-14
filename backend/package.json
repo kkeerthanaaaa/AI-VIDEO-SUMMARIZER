@@ -1,5 +1,6 @@
 {
-  "name": "ai-video-summarizer-backend"
+  "name": "ai-video-summarizer-backend",
+  "version": "1.0.0",
   "description": "Backend API for AI Video Summarizer (Express + TypeScript + Gemini API)",
   "main": "dist/server.js",
   "type": "commonjs",
