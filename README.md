@@ -304,6 +304,4 @@ The app handles and surfaces friendly messages for:
 
 ---
 
-## 📄 License
-
-MIT — use this freely for personal or commercial projects.
+**FROM TEAM WINNERS!!**
