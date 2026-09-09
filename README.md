@@ -286,7 +286,7 @@ The app handles and surfaces friendly messages for:
 > After deploying the backend, update the frontend's `VITE_API_BASE_URL` to point to it and redeploy the frontend (or set it before the first deploy).
 
 ---
-
+    
 ## 🛡️ Security Notes
 
 - The Gemini API key lives only in the backend's environment variables and is never bundled into frontend code.
